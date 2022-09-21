@@ -1,0 +1,13 @@
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\bin\Debug\netcoreapp3.1\PatternGame.exe
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\bin\Debug\netcoreapp3.1\PatternGame.deps.json
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\bin\Debug\netcoreapp3.1\PatternGame.runtimeconfig.json
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\bin\Debug\netcoreapp3.1\PatternGame.runtimeconfig.dev.json
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\bin\Debug\netcoreapp3.1\PatternGame.dll
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\bin\Debug\netcoreapp3.1\PatternGame.pdb
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\obj\Debug\netcoreapp3.1\PatternGame.csproj.CoreCompileInputs.cache
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\obj\Debug\netcoreapp3.1\PatternGame.AssemblyInfoInputs.cache
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\obj\Debug\netcoreapp3.1\PatternGame.AssemblyInfo.cs
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\obj\Debug\netcoreapp3.1\PatternGame.dll
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\obj\Debug\netcoreapp3.1\PatternGame.pdb
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\obj\Debug\netcoreapp3.1\PatternGame.genruntimeconfig.cache
+C:\Users\emma.dahlqvist4\source\repos\PatternGame\PatternGame\obj\Debug\netcoreapp3.1\PatternGame.csprojAssemblyReference.cache
