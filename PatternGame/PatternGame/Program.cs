@@ -6,16 +6,26 @@ namespace PatternGame
 {
     class Program
     {
+        static int points = 0;
         static void Main(string[] args)
         {
             int delay = 500;
             bool playAgain = false;
             do
             {
+                Console.WriteLine("Be ready and repeat the pattern, in..");
+                Thread.Sleep(1000);
+                for(int i = 3; i > 0; i--)
+                {
+                    Console.WriteLine(i + "..");
+                    Thread.Sleep(1000);
+                }
                 PlayGame(delay);
-                Console.WriteLine("Press space to play again: ");
+                Console.WriteLine("Points: " + points + "\n");
+                
+                Console.WriteLine("Press [SPACE] or [ENTER] to play again: ");
                 ConsoleKeyInfo key = Console.ReadKey(true);
-                if (key.Key == ConsoleKey.Spacebar)
+                if (key.Key == ConsoleKey.Spacebar || key.Key == ConsoleKey.Enter)
                 {
                     playAgain = true;
                 }
@@ -24,13 +34,18 @@ namespace PatternGame
                     playAgain = false;
                 }
 
-                delay -= 50;
+                if(delay > 100)
+                {
+                    delay -= 50;
+                }
             } while (playAgain);
+
+            //avslutat
+            Console.WriteLine("Goodbye..");
         }
 
         static void PlayGame(int delay)
         {
-
             List<int> amountOfPatterns = randomPatternGenerator();
             for (int i = 0; i < amountOfPatterns.Count; i++)
             {
@@ -48,43 +63,56 @@ namespace PatternGame
             Console.WriteLine("Try to remember the pattern:\n");
             List<int> keyInput = getKeyInput(amountOfPatterns.Count); //lika många gissningar som mönster
 
+            Console.Clear();
+            Console.WriteLine("Stats: ");
             for (int i = 0; i < amountOfPatterns.Count; i++)
             {
-
                 if (amountOfPatterns[i] == keyInput[i])
                 {
+                    points++;
                     Console.WriteLine(i + 1 + " Correct");
                 }
                 else
                 {
+                    points--;
                     Console.WriteLine(i + 1 + " False");
                 }
             }
+            Thread.Sleep(800);
         }
 
         static List<int> getKeyInput(int amountOfInputs)
         {
-            List<int> KeyInput = new List<int>();
-
+            List<int> KeyInput = new List<int>(); //keys pressed
+            bool keyInputCorrect = false;
             for (int i = 0; i < amountOfInputs; i++)
             {
-                ConsoleKeyInfo key = Console.ReadKey(true);
-                switch (key.Key)
+                do
                 {
-                    case ConsoleKey.UpArrow:
-                        KeyInput.Add(1);
-                        break;
-                    case ConsoleKey.DownArrow:
-                        KeyInput.Add(2);
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        KeyInput.Add(3);
-                        break;
-                    case ConsoleKey.RightArrow:
-                        KeyInput.Add(4);
-                        break;
-                }
+                    ConsoleKeyInfo key = Console.ReadKey(true);
+                    keyInputCorrect = true; //correct input type
+                    switch (key.Key)
+                    {
+                        case ConsoleKey.UpArrow:
+                            KeyInput.Add(1); //up = 1
+                            break;
+                        case ConsoleKey.DownArrow:
+                            KeyInput.Add(2); //down = 2
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            KeyInput.Add(3); //left = 3
+                            break;
+                        case ConsoleKey.RightArrow:
+                            KeyInput.Add(4); //right = 4
+                            break;
+                        default:
+                            Console.WriteLine("Not a correct input, please try with the keyboard arrows!");
+                            keyInputCorrect = false;
+                            break;
+                    }
+                } while (!keyInputCorrect);
             }
+
             return KeyInput;
         }
 
@@ -92,10 +120,11 @@ namespace PatternGame
         {
             List<int> patternIndexes = new List<int>();
             Random rnd = new Random();
-            int randomAmount = rnd.Next(3, 7); // 1 - 5 patterns
+            int randomAmount = rnd.Next(3, 6); // 3 - 6 patterns
+            
             for(int i = 0; i < randomAmount; i++)
             {
-                int randomPattern = rnd.Next(1, 5);
+                int randomPattern = rnd.Next(1, 5); //random amount patterns, index 1-4
                 patternIndexes.Add(randomPattern);
             }
             return patternIndexes;
